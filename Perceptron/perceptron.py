@@ -83,9 +83,11 @@ while hubo_error and epoca < max_epocas:
 # Graficar la línea de decisión
 # Obviamos que serán 2 entradas y no más para graficar en 2D
 if n_inputs == 2:
-    x = np.linspace(0, 1)  # 100 puntos entre 0 y 10
+    x = np.linspace(-1, 2)  # 100 puntos entre 0 y 10
     y = (-w[0] * x - b) / w[1]  # Ecuación de la línea de decisión
+    z = (-w[0] * x) / w[1]
     plt.plot(x, y)
+    plt.plot(x, z)
     for i in range(n_examples):
         x1 = datos[i][0]
         x2 = datos[i][1]
