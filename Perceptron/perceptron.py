@@ -80,18 +80,21 @@ while hubo_error and epoca < max_epocas:
 
     epoca += 1
 
-x = np.linspace(0, 1)  # 100 puntos entre 0 y 10
-y = (-w[0] * x - b) / w[1]  # Ecuación de la línea de decisión
-plt.plot(x, y)
-for i in range(n_examples):
-    x1 = datos[i][0]
-    x2 = datos[i][1]
-    plt.scatter(x1, x2)
-plt.title("Separación de clases con Perceptrón")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.grid()
-plt.show()
+# Graficar la línea de decisión
+# Obviamos que serán 2 entradas y no más para graficar en 2D
+if n_inputs == 2:
+    x = np.linspace(0, 1)  # 100 puntos entre 0 y 10
+    y = (-w[0] * x - b) / w[1]  # Ecuación de la línea de decisión
+    plt.plot(x, y)
+    for i in range(n_examples):
+        x1 = datos[i][0]
+        x2 = datos[i][1]
+        plt.scatter(x1, x2)
+    plt.title("Separación de clases con Perceptrón")
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.grid()
+    plt.show()
 
 print("\n------------------------------")
 print(f"Entrenamiento finalizado en {epoca} épocas")
