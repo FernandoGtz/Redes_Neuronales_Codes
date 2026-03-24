@@ -18,7 +18,7 @@ if op == 1:
             fila = []
             for j in range(columnasA):
                 valor = int(input(f"A[{i+1}][{j+1}]: "))
-                fila.append(valor)
+            fila.append(valor)
             mA.append(fila)
 
         print("--- MATRIZ B ---")
